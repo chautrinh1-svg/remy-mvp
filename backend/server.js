@@ -98,9 +98,15 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`\n🍴 Remy backend đang chạy tại http://localhost:${PORT}`);
-  console.log(`   GROQ key : ${process.env.GROQ_API_KEY ? "✓ loaded" : "✗ MISSING"}`);
-  console.log(`   BRAVE key: ${process.env.BRAVE_API_KEY ? "✓ loaded" : "✗ MISSING"}\n`);
-});
+// Local dev
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`\n🧳 Remy backend đang chạy tại http://localhost:${PORT}`);
+    console.log(`   GROQ key : ${process.env.GROQ_API_KEY ? "✓ loaded" : "✗ MISSING"}`);
+    console.log(`   BRAVE key: ${process.env.BRAVE_API_KEY ? "✓ loaded" : "✗ MISSING"}\n`);
+  });
+}
+
+// Vercel serverless export
+module.exports = app;
