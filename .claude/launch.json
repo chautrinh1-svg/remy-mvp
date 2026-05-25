@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "remy-frontend",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-s", "frontend", "-p", "3333", "--no-clipboard"],
+      "port": 3333
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remy — AI Travel Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="chat-wrap">
+
+  <!-- ── Header ──────────────────────────────────── -->
+  <header class="chat-header">
+    <div class="brand">
+      <span class="brand-icon">🧳</span>
+      <div class="brand-text">
+        <strong class="brand-name">Remy</strong>
+        <span class="brand-sub">AI Travel Review</span>
+      </div>
+    </div>
+    <button class="btn-new" id="newChatBtn" title="Cuộc hội thoại mới">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      Mới
+    </button>
+  </header>
+
+  <!-- ── Messages ─────────────────────────────────── -->
+  <main class="chat-body" id="chatBody">
+
+    <!-- Welcome screen (shown when no conversation) -->
+    <div class="welcome" id="welcome">
+      <div class="welcome-avatar">🧳</div>
+      <h2 class="welcome-title">Xin chào! Tôi là Remy</h2>
+      <p class="welcome-sub">Bất kỳ địa điểm nào ở Việt Nam — Remy sẽ tổng hợp review từ nhiều nguồn khác nhau để cho bạn cái nhìn tổng quan nhất.</p>
+      <div class="welcome-chips">
+        <button class="w-chip" data-q="Review Vinpearl Nha Trang">🏝️ Review Vinpearl Nha Trang</button>
+        <button class="w-chip" data-q="Review du lịch Cù Lao Câu mùa hè">⛺ Review Cù Lao Câu mùa hè</button>
+        <button class="w-chip" data-q="Review Phan Thiết Mũi Né cho cặp đôi">🌊 Review Phan Thiết cho cặp đôi</button>
+        <button class="w-chip" data-q="Review Đà Lạt tháng 12">🌸 Review Đà Lạt tháng 12</button>
+        <button class="w-chip" data-q="Review nhà hàng hải sản Hội An">🥢 Review nhà hàng Hội An</button>
+      </div>
+    </div>
+
+    <!-- Dynamic message list -->
+    <div id="msgList"></div>
+
+  </main>
+
+  <!-- ── Input ─────────────────────────────────────── -->
+  <footer class="chat-footer">
+    <form class="input-row" id="chatForm" novalidate>
+      <input
+        id="chatInput"
+        type="text"
+        class="chat-input"
+        placeholder="Review [địa điểm / nhà hàng / trải nghiệm]..."
+        autocomplete="off"
+        maxlength="300"
+      />
+      <button type="submit" class="send-btn" id="sendBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"/>
+          <polyline points="5 12 12 5 19 12"/>
+        </svg>
+      </button>
+    </form>
+    <p class="footer-hint">Remy phân tích từ nguồn công khai · Kết quả trong ~15–20 giây</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
